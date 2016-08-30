@@ -23,6 +23,7 @@ sgs_result = sgs.sgs(
     invert_transform=True,
     ordinary=False)
 
+print "Background constant estimate: ", sgs_result.estimate_constant_from_corners()
 print "Universal Kriging integral: ", sgs_result.estimate_integral(1, 1)
 
 sgs_result = sgs.sgs(
@@ -31,7 +32,7 @@ sgs_result = sgs.sgs(
     dy=(data.y_m.max()-data.y_m.min())/5,
     invert_transform=True,
     ordinary=True)
-
+print "Background constant estimate: ", sgs_result.estimate_constant_from_corners()
 print "Ordinary Kriging integral: ", sgs_result.estimate_integral(1, 1)
 
 print "done"
